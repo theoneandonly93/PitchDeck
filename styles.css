@@ -1,0 +1,613 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.presentation-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Navigation */
+.slide-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.slide-counter {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Slides Container */
+.slides-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.slide-content {
+    max-width: 900px;
+    padding: 60px;
+    text-align: center;
+    color: white;
+}
+
+/* Title Slide */
+.title-slide .company-name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.title-slide .tagline {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.title-slide .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin-bottom: 60px;
+}
+
+.presenter-info {
+    margin-top: 80px;
+}
+
+.presenter-info p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+/* Slide Titles */
+.slide-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+/* Problem Slide */
+.problem-points {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: left;
+}
+
+.problem-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.problem-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.problem-item p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Solution Slide */
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.solution-feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.solution-feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.solution-feature h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.solution-feature p {
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Market Slide */
+.market-circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.market-circle {
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.market-circle:hover {
+    transform: scale(1.05);
+}
+
+.market-circle.large {
+    width: 200px;
+    height: 200px;
+}
+
+.market-circle.medium {
+    width: 150px;
+    height: 150px;
+}
+
+.market-circle.small {
+    width: 120px;
+    height: 120px;
+}
+
+.circle-content {
+    text-align: center;
+}
+
+.circle-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.circle-content p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.3;
+}
+
+/* Business Model */
+.business-model {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.revenue-stream {
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.revenue-stream h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.revenue-stream p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.revenue-bar {
+    height: 8px;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 4px;
+    position: relative;
+    transition: width 0.3s ease;
+}
+
+.revenue-bar::after {
+    content: attr(style);
+    position: absolute;
+    right: -40px;
+    top: -25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Traction Metrics */
+.traction-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.metric {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.metric:hover {
+    transform: translateY(-5px);
+}
+
+.metric-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.metric-label {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+/* Competition */
+.competition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.competitor {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.competitor:hover {
+    transform: translateY(-5px);
+}
+
+.competitor.our-solution {
+    background: rgba(76, 172, 254, 0.2);
+    border: 2px solid rgba(76, 172, 254, 0.5);
+}
+
+.competitor h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.pros-cons {
+    text-align: left;
+}
+
+.pros-cons p {
+    margin: 8px 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Team */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.team-member {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    color: white;
+}
+
+.team-member h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.team-member .title {
+    font-size: 1.1rem;
+    color: #4facfe;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.team-member .experience {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* Funding */
+.funding-content {
+    text-align: center;
+}
+
+.funding-amount {
+    margin-bottom: 60px;
+}
+
+.funding-amount h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.funding-amount p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.funding-breakdown {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.funding-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+}
+
+.funding-item:last-child {
+    border-bottom: none;
+}
+
+.funding-item .amount {
+    font-weight: 600;
+    color: #4facfe;
+}
+
+/* Thank You Slide */
+.thank-you-slide h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.thank-you-slide h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 60px;
+    opacity: 0.8;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    transition: width 0.3s ease;
+    width: 10%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 30px 20px;
+    }
+    
+    .title-slide .company-name {
+        font-size: 2.5rem;
+    }
+    
+    .title-slide .tagline {
+        font-size: 1.5rem;
+    }
+    
+    .slide-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .market-circles {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .market-circle.large {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .market-circle.medium {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .market-circle.small {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .solution-grid,
+    .traction-metrics,
+    .competition-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .slide-nav {
+        padding: 15px 20px;
+    }
+    
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .slide-counter {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-content {
+        padding: 20px 15px;
+    }
+    
+    .title-slide .company-name {
+        font-size: 2rem;
+    }
+    
+    .slide-title {
+        font-size: 1.5rem;
+    }
+    
+    .funding-amount h2 {
+        font-size: 2rem;
+    }
+    
+    .thank-you-slide h1 {
+        font-size: 2.5rem;
+    }
+    
+    .thank-you-slide h2 {
+        font-size: 1.8rem;
+    }
+}

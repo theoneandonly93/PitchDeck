@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Pitch Deck</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <button class="nav-btn prev-btn" onclick="previousSlide()">‹</button>
+            <span class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">10</span>
+            </span>
+            <button class="nav-btn next-btn" onclick="nextSlide()">›</button>
+        </nav>
+
+        <!-- Slide Container -->
+        <div class="slides-container">
+            <!-- Slide 1: Title -->
+            <div class="slide active" id="slide-1">
+                <div class="slide-content title-slide">
+                    <h1 class="company-name">YourStartup</h1>
+                    <h2 class="tagline">Revolutionizing the Future</h2>
+                    <p class="subtitle">The next big thing in technology</p>
+                    <div class="presenter-info">
+                        <p><strong>John Doe</strong> - CEO & Founder</p>
+                        <p>john@yourstartup.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Problem -->
+            <div class="slide" id="slide-2">
+                <div class="slide-content">
+                    <h1 class="slide-title">The Problem</h1>
+                    <div class="problem-points">
+                        <div class="problem-item">
+                            <h3>🚫 Current solutions are inefficient</h3>
+                            <p>Traditional approaches cost 3x more and take 5x longer</p>
+                        </div>
+                        <div class="problem-item">
+                            <h3>⏰ Time-consuming processes</h3>
+                            <p>Users waste 2+ hours daily on manual tasks</p>
+                        </div>
+                        <div class="problem-item">
+                            <h3>💸 Expensive alternatives</h3>
+                            <p>Market solutions price out 60% of potential customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Solution -->
+            <div class="slide" id="slide-3">
+                <div class="slide-content">
+                    <h1 class="slide-title">Our Solution</h1>
+                    <div class="solution-grid">
+                        <div class="solution-feature">
+                            <div class="feature-icon">⚡</div>
+                            <h3>10x Faster</h3>
+                            <p>Automated workflow reduces task time from hours to minutes</p>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="feature-icon">💰</div>
+                            <h3>70% Cost Reduction</h3>
+                            <p>AI-powered optimization cuts operational costs dramatically</p>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Precision Accuracy</h3>
+                            <p>Machine learning delivers 99.9% accuracy rates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Market Size -->
+            <div class="slide" id="slide-4">
+                <div class="slide-content">
+                    <h1 class="slide-title">Market Opportunity</h1>
+                    <div class="market-circles">
+                        <div class="market-circle large">
+                            <div class="circle-content">
+                                <h3>$50B</h3>
+                                <p>Total Addressable Market</p>
+                            </div>
+                        </div>
+                        <div class="market-circle medium">
+                            <div class="circle-content">
+                                <h3>$5B</h3>
+                                <p>Serviceable Available Market</p>
+                            </div>
+                        </div>
+                        <div class="market-circle small">
+                            <div class="circle-content">
+                                <h3>$500M</h3>
+                                <p>Serviceable Obtainable Market</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Business Model -->
+            <div class="slide" id="slide-5">
+                <div class="slide-content">
+                    <h1 class="slide-title">Business Model</h1>
+                    <div class="business-model">
+                        <div class="revenue-stream">
+                            <h3>SaaS Subscription</h3>
+                            <p>$99/month per user</p>
+                            <div class="revenue-bar" style="width: 60%;">60%</div>
+                        </div>
+                        <div class="revenue-stream">
+                            <h3>Enterprise Licenses</h3>
+                            <p>$10K+ annual contracts</p>
+                            <div class="revenue-bar" style="width: 30%;">30%</div>
+                        </div>
+                        <div class="revenue-stream">
+                            <h3>Professional Services</h3>
+                            <p>Implementation & training</p>
+                            <div class="revenue-bar" style="width: 10%;">10%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Traction -->
+            <div class="slide" id="slide-6">
+                <div class="slide-content">
+                    <h1 class="slide-title">Traction</h1>
+                    <div class="traction-metrics">
+                        <div class="metric">
+                            <div class="metric-number">10K+</div>
+                            <div class="metric-label">Active Users</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-number">$2M</div>
+                            <div class="metric-label">ARR</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-number">150%</div>
+                            <div class="metric-label">YoY Growth</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-number">95%</div>
+                            <div class="metric-label">Customer Retention</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Competition -->
+            <div class="slide" id="slide-7">
+                <div class="slide-content">
+                    <h1 class="slide-title">Competitive Landscape</h1>
+                    <div class="competition-grid">
+                        <div class="competitor">
+                            <h3>Legacy Solutions</h3>
+                            <div class="pros-cons">
+                                <div class="cons">
+                                    <p>❌ Slow and expensive</p>
+                                    <p>❌ Poor user experience</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="competitor">
+                            <h3>New Entrants</h3>
+                            <div class="pros-cons">
+                                <div class="pros">
+                                    <p>✅ Modern UI</p>
+                                </div>
+                                <div class="cons">
+                                    <p>❌ Limited features</p>
+                                    <p>❌ No enterprise focus</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="competitor our-solution">
+                            <h3>YourStartup</h3>
+                            <div class="pros-cons">
+                                <div class="pros">
+                                    <p>✅ Best-in-class performance</p>
+                                    <p>✅ Enterprise-ready</p>
+                                    <p>✅ Competitive pricing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Team -->
+            <div class="slide" id="slide-8">
+                <div class="slide-content">
+                    <h1 class="slide-title">Our Team</h1>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-avatar">JD</div>
+                            <h3>John Doe</h3>
+                            <p class="title">CEO & Founder</p>
+                            <p class="experience">10+ years in tech, former Google PM</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">JS</div>
+                            <h3>Jane Smith</h3>
+                            <p class="title">CTO</p>
+                            <p class="experience">15+ years engineering, ex-Microsoft</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">MB</div>
+                            <h3>Mike Brown</h3>
+                            <p class="title">VP Sales</p>
+                            <p class="experience">12+ years B2B sales, ex-Salesforce</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Funding -->
+            <div class="slide" id="slide-9">
+                <div class="slide-content">
+                    <h1 class="slide-title">Funding Ask</h1>
+                    <div class="funding-content">
+                        <div class="funding-amount">
+                            <h2>$5M Series A</h2>
+                            <p>18-month runway to reach profitability</p>
+                        </div>
+                        <div class="funding-breakdown">
+                            <div class="funding-item">
+                                <span class="category">Engineering Team</span>
+                                <span class="amount">40%</span>
+                            </div>
+                            <div class="funding-item">
+                                <span class="category">Sales & Marketing</span>
+                                <span class="amount">35%</span>
+                            </div>
+                            <div class="funding-item">
+                                <span class="category">Operations</span>
+                                <span class="amount">15%</span>
+                            </div>
+                            <div class="funding-item">
+                                <span class="category">Contingency</span>
+                                <span class="amount">10%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Thank You -->
+            <div class="slide" id="slide-10">
+                <div class="slide-content thank-you-slide">
+                    <h1>Thank You</h1>
+                    <h2>Questions?</h2>
+                    <div class="contact-info">
+                        <p><strong>John Doe</strong></p>
+                        <p>john@yourstartup.com</p>
+                        <p>+1 (555) 123-4567</p>
+                        <p>www.yourstartup.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
