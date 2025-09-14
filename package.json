@@ -1,0 +1,47 @@
+{
+  "name": "pitchdeck-docs",
+  "version": "1.0.0",
+  "description": "Modern documentation site with PowerPoint (.pptx) file support",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -c-1",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "echo 'CSS build complete'",
+    "build:js": "echo 'JS build complete'",
+    "dev": "npx http-server . -p 3000 -c-1 --cors",
+    "serve": "npm start",
+    "test": "echo 'No tests specified'",
+    "lint": "npx eslint assets/js/*.js",
+    "format": "npx prettier --write assets/js/*.js assets/css/*.css *.html"
+  },
+  "keywords": [
+    "documentation",
+    "powerpoint",
+    "presentation",
+    "pptx",
+    "viewer",
+    "responsive",
+    "dark-theme"
+  ],
+  "author": "PitchDeck Team",
+  "license": "MIT",
+  "dependencies": {
+    "officegen": "^0.6.5"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theoneandonly93/PitchDeck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theoneandonly93/PitchDeck/issues"
+  },
+  "homepage": "https://github.com/theoneandonly93/PitchDeck#readme"
+}

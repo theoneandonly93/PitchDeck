@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PitchDeck Documentation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-presentation"></i>
+                    <h1>PitchDeck</h1>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search documentation..." id="searchInput">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#getting-started" class="nav-link">
+                            <i class="fas fa-rocket"></i>
+                            Getting Started
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#upload-presentation" class="nav-link">
+                            <i class="fas fa-upload"></i>
+                            Upload Presentation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#presentation-viewer" class="nav-link">
+                            <i class="fas fa-eye"></i>
+                            Presentation Viewer
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            Features
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#api-reference" class="nav-link">
+                            <i class="fas fa-code"></i>
+                            API Reference
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="https://github.com/theoneandonly93/PitchDeck" class="github-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </header>
+
+            <div class="content" id="content">
+                <!-- Getting Started Section -->
+                <section id="getting-started" class="content-section active">
+                    <div class="section-header">
+                        <h1>Getting Started</h1>
+                        <p>Welcome to PitchDeck - your modern presentation documentation platform</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>What is PitchDeck?</h2>
+                        <p>PitchDeck is a modern documentation platform that allows you to easily upload, view, and share PowerPoint presentations in a beautiful web interface.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li><strong>Drag & Drop Upload:</strong> Simply drag your .pptx files into the browser</li>
+                            <li><strong>Responsive Design:</strong> Works seamlessly on desktop and mobile devices</li>
+                            <li><strong>Dark/Light Theme:</strong> Toggle between themes for comfortable viewing</li>
+                            <li><strong>Search Functionality:</strong> Find content quickly with built-in search</li>
+                            <li><strong>Modern Interface:</strong> Clean, professional documentation layout</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h2>Quick Start</h2>
+                        <ol>
+                            <li>Navigate to the <a href="#upload-presentation" class="internal-link">Upload Presentation</a> section</li>
+                            <li>Drag and drop your .pptx file or click to browse</li>
+                            <li>View your presentation in the <a href="#presentation-viewer" class="internal-link">Presentation Viewer</a></li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Upload Presentation Section -->
+                <section id="upload-presentation" class="content-section">
+                    <div class="section-header">
+                        <h1>Upload Presentation</h1>
+                        <p>Upload your PowerPoint (.pptx) files to view them in the documentation interface</p>
+                    </div>
+
+                    <div class="upload-container">
+                        <div class="upload-zone" id="uploadZone">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                <h3>Drop your .pptx file here</h3>
+                                <p>or <button class="upload-btn" id="uploadBtn">browse files</button></p>
+                                <input type="file" id="fileInput" accept=".pptx" style="display: none;">
+                            </div>
+                        </div>
+                        
+                        <div class="upload-info">
+                            <h3>Supported Formats</h3>
+                            <ul>
+                                <li><i class="fas fa-file-powerpoint"></i> PowerPoint (.pptx)</li>
+                            </ul>
+                            
+                            <h3>File Requirements</h3>
+                            <ul>
+                                <li>Maximum file size: 50MB</li>
+                                <li>Modern PowerPoint format (.pptx only)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="uploaded-files" id="uploadedFiles" style="display: none;">
+                        <h3>Uploaded Files</h3>
+                        <div class="file-list" id="fileList"></div>
+                    </div>
+                </section>
+
+                <!-- Presentation Viewer Section -->
+                <section id="presentation-viewer" class="content-section">
+                    <div class="section-header">
+                        <h1>Presentation Viewer</h1>
+                        <p>View and navigate through your uploaded presentations</p>
+                    </div>
+
+                    <div id="presentationContainer" class="presentation-container">
+                        <div class="no-presentation">
+                            <i class="fas fa-presentation"></i>
+                            <h3>No presentation loaded</h3>
+                            <p>Upload a .pptx file to view it here</p>
+                            <button class="btn-primary" onclick="showSection('upload-presentation')">Upload Now</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section id="features" class="content-section">
+                    <div class="section-header">
+                        <h1>Features</h1>
+                        <p>Discover all the capabilities of PitchDeck</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-upload"></i>
+                            <h3>Easy Upload</h3>
+                            <p>Drag and drop or browse to upload your PowerPoint files with ease.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Responsive Design</h3>
+                            <p>View your presentations on any device with our responsive layout.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <i class="fas fa-search"></i>
+                            <h3>Search Functionality</h3>
+                            <p>Quickly find specific slides or content within your presentations.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <i class="fas fa-palette"></i>
+                            <h3>Theme Toggle</h3>
+                            <p>Switch between light and dark themes for comfortable viewing.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- API Reference Section -->
+                <section id="api-reference" class="content-section">
+                    <div class="section-header">
+                        <h1>API Reference</h1>
+                        <p>Technical documentation for developers</p>
+                    </div>
+
+                    <div class="card">
+                        <h2>File Upload API</h2>
+                        <p>Programmatically upload and process PowerPoint files.</p>
+                        
+                        <div class="code-block">
+                            <pre><code>// Upload a PowerPoint file
+const uploadFile = async (file) => {
+    const formData = new FormData();
+    formData.append('presentation', file);
+    
+    const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+    });
+    
+    return response.json();
+};</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Presentation Viewer API</h2>
+                        <p>Control the presentation viewer programmatically.</p>
+                        
+                        <div class="code-block">
+                            <pre><code>// Load a presentation
+PresentationViewer.load(presentationData);
+
+// Navigate slides
+PresentationViewer.nextSlide();
+PresentationViewer.previousSlide();
+PresentationViewer.goToSlide(slideNumber);</code></pre>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/pptx-processor.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/presentation.js"></script>
+</body>
+</html>
